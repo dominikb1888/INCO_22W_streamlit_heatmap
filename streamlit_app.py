@@ -43,7 +43,7 @@ pivot_table
 sns.set(rc={'figure.figsize':(11,44)})
 start_date = datetime.strptime("2022-03-16 11:00:00", '%Y-%m-%d %H:%M:%S')
 
-pivot_table = (dff[dff.updatedAt < start_date + timedelta(days = i)]
+pivot_table = (dff[dff.updatedAt < start_date + timedelta(days = 230)]
                    .pivot_table(index="user_login", columns="session_no", values='url', aggfunc='count'))
 
 heatmap_plot = sns.heatmap(
