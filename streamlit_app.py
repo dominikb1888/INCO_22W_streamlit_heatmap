@@ -72,8 +72,8 @@ my_date = st.slider(
     "Until?",
     value=datetime(2022, 3, 16, 8, 30, 0),
     step=timedelta(days=1),
-    min_value = timedelta(days=0),
-    max_value = timedelta(days=300),
+    min_value = datetime(2022, 3, 16, 8,30, 0) - timedelta(days=0),
+    max_value = datetime(2022, 3 ,16, 8, 30, 0) + timedelta(days=300),
     format="MM/DD/YY - hh:mm:ss")
 heatmap_plot(my_date)
 st.pyplot()
