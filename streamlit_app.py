@@ -65,4 +65,5 @@ heatmap_plot.set_yticklabels(heatmap_plot.get_yticklabels(), va='center_baseline
 heatmap_plot.set_xticklabels(heatmap_plot.get_xticklabels(), ha='center')
 heatmap_plot.xaxis.tick_top()
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.pyplot()
