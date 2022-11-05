@@ -68,5 +68,5 @@ def heatmap_plot(my_date=datetime.strptime("2022-03-16 11:00:00", '%Y-%m-%d %H:%
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 my_date = st.sidebar.date_input('start date', datetime(2022,3,3,11,0,0))
-heatmap_plot(date)
+heatmap_plot(my_date)
 st.pyplot()
