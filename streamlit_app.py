@@ -41,8 +41,8 @@ pivot_table.drop('sum_cols', axis=1, inplace=True)
 sns.set(rc={'figure.figsize':(11,44)})
 
 
-def heatmap_plot(date=datetime.strptime("2022-03-16 11:00:00", '%Y-%m-%d %H:%M:%S')):
-    pivot_table = (dff[dff.updatedAt < date]
+def heatmap_plot(my_date=datetime.strptime("2022-03-16 11:00:00", '%Y-%m-%d %H:%M:%S')):
+    pivot_table = (dff[dff.updatedAt < my_date]
                    .pivot_table(index="user_login", columns="session_no", values='url', aggfunc='count'))
 
     heatmap_plot = sns.heatmap(
@@ -67,6 +67,6 @@ def heatmap_plot(date=datetime.strptime("2022-03-16 11:00:00", '%Y-%m-%d %H:%M:%
     heatmap_plot.xaxis.tick_top()
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-date = st.sidebar.date_input('start date', datetime.date(2022,3,3))
+my_date = st.sidebar.date_input('start date', datetime.date(2022,3,3))
 heatmap_plot(date)
 st.pyplot()
