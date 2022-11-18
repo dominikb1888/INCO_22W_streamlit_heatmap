@@ -60,4 +60,4 @@ my_date = st.slider(
     max_value = datetime(2022, 3 ,16, 8, 30, 0) + timedelta(days=300),
     format="MM/DD/YY - hh:mm:ss")
 
-st.table(pivot_table.style.background_gradient(axis=None, cmap="YlGnBu").applymap(color_hide_nan))
+st.dataframe(pivot_table.style.background_gradient(axis=None, cmap="YlGnBu").applymap(color_hide_nan))
